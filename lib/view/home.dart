@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          '1.1.1.1',
+          '1.1.1.1 \n by Cloudflare',
           style: TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
         ),
         actions: [
@@ -174,11 +174,11 @@ class HomeScreen extends StatelessWidget {
   child: Row(
     children: [
       const SizedBox(width: 15),
-      Expanded(
+      const Expanded(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Text(
               'Enable 1.1.1.1 with WARP',
               style: TextStyle(fontSize: 16),
