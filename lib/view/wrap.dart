@@ -15,6 +15,7 @@ class WrapScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -33,7 +34,7 @@ class WrapScreen extends StatelessWidget {
             onPressed: () {},
             child: const Text(
               '?',
-              style: TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
+              style: TextStyle(fontWeight: FontWeight.w900, fontSize: 20, color: Colors.black),
             ),
           ),
           IconButton(

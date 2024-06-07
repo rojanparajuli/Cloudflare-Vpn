@@ -1,4 +1,4 @@
-import 'package:cloudflare/splash/splash.dart';
+import 'package:cloudflare/view/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

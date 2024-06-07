@@ -1,5 +1,6 @@
 import 'package:cloudflare/controller/controller.dart';
 import 'package:cloudflare/view/colors.dart';
+import 'package:cloudflare/view/support.dart';
 import 'package:cloudflare/view/wrap.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,7 +32,9 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.to(()=>Supportpage());
+            },
             child: const Text(
               '?',
               style: TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
@@ -124,17 +127,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          // Obx(
-          //   () => Text(
-          //     _homeScreenController.isSwitched.value
-          //         ? 'Connected'
-          //         : 'Disconnected',
-          //     style: TextStyle(
-          //         fontSize: 18,
-          //         color: Colors.orange[900],
-          //         fontWeight: FontWeight.bold),
-          //   ),
-          // ),
+
           const SizedBox(
             height: 10,
           ),
