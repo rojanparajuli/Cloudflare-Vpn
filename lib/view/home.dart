@@ -1,9 +1,7 @@
 import 'package:cloudflare/controller/controller.dart';
 import 'package:cloudflare/view/colors.dart';
 import 'package:cloudflare/view/wrap.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -69,7 +67,7 @@ class HomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(height: 30),
-          Container(
+          SizedBox(
             height: 100,
             width: 200,
             //color: Colors.red,
@@ -112,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                 )),
           ),
           const SizedBox(
-            height: 60,
+            height: 40,
           ),
           Obx(
             () => Text(
@@ -125,86 +123,85 @@ class HomeScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
           ),
+          const SizedBox(
+            height: 10,
+          ),
           Obx(
             () => Text(
               _homeScreenController.isSwitched.value
                   ? 'Your DNS queries are'
                   : 'Your DNS queries are not',
               // 'Your DNS queries are',
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
-          ),
-          const SizedBox(
-            height: 19,
           ),
           RichText(
             text: TextSpan(
                 text: 'private',
-                style: TextStyle(color: Colors.orange[900], fontSize: 18),
+                style: TextStyle(
+                    color: Colors.orange[900],
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
                 children: <TextSpan>[
                   const TextSpan(
-                    text: ' and',
-                    style: TextStyle(color: Colors.black, fontSize: 18),
+                    text: ' and ',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
                   ),
                   TextSpan(
                     text: 'faster',
-                    style: TextStyle(color: Colors.orange[900], fontSize: 18),
+                    style: TextStyle(
+                        color: Colors.orange[900],
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
                   )
                 ]),
           ),
-
-          //  Text(
-          //   _homeScreenController.isSwitched.value
-          //       ? 'private and faster'
-          //       : 'private',
-          //   style: TextStyle(
-          //     fontSize: 18,
-          //     fontWeight: FontWeight.bold,
-          //     color: _homeScreenController.isSwitched.value
-          //         ? Colors.orange[900]
-          //         : null,
-          //   ),
-          // ),
-
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical:0),
-          //   child: Column(
-          //     crossAxisAlignment: CrossAxisAlignment.center,
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: [
-
-          //       const SizedBox(
-          //         height: 60,
-          //       ),
-
-          //       const SizedBox(
-          //         height: 30,
-          //       ),
-
-          //     ],
-          //   ),
-          // ),
-          Spacer(),
+          const Spacer(),
           Container(
             // color: Colors.amber,
             padding: const EdgeInsets.symmetric(vertical: 10.0),
-            
+
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 const SizedBox(width: 15),
-                const Expanded(
+                Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'Enable 1.1.1.1 with WARP',
-                        style: TextStyle(fontSize: 16),
+                      RichText(
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                              text: 'Enable 1.1.1.1 with ',
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black, // Set the color to black
+                              ),
+                            ),
+                            TextSpan(
+                              text: 'WARP',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontWeight: FontWeight
+                                    .bold, // Use FontWeight.bold for bold text
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      Text(
+                      const Text(
                         'a more private internet, for free',
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ],
                   ),
@@ -216,8 +213,8 @@ class HomeScreen extends StatelessWidget {
                     height: 50,
                     width: 110, // Adjust the width as needed
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Colors.pink, Colors.orange],
+                      gradient: LinearGradient(
+                        colors: [Colors.orange.shade900, Colors.pink.shade600],
                       ),
                       borderRadius:
                           BorderRadius.circular(10), // Adjust as needed
