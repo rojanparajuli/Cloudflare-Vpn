@@ -259,7 +259,7 @@ class WrapScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(height: 30),
-          Container(
+          SizedBox(
             height: 100,
             width: 200,
             //color: Colors.red,
