@@ -98,31 +98,43 @@ class HomeScreen extends StatelessWidget {
           ),
           Transform.scale(
             scale: 2.5,
-            // Adjust the scale factor as needed
             child: Obx(() => Switch(
-                  // dragStartBehavior: DragStartBehavior.right,
-                  value: _homeScreenController.isSwitched.value,
-                  onChanged: (value) {
-                    _homeScreenController.toggleSwitch();
-                  },
-                  activeTrackColor: Colors.orange[900],
-                  activeColor: Colors.white,
-                )),
+                    value: _homeScreenController.isSwitched.value,
+                    onChanged: (value) {
+                      if (value) {
+                        _homeScreenController.toggleSwitch();
+                      } else {
+                        _homeScreenController.handleSwitchOff(context);
+                      }
+                    },
+                    activeTrackColor: Colors.orange[900],
+                    activeColor: Colors.white,
+                  )),
           ),
           const SizedBox(
             height: 40,
           ),
-          Obx(
+             Obx(
             () => Text(
-              _homeScreenController.isSwitched.value
-                  ? 'Connected'
-                  : 'Disconnected',
+              _homeScreenController.statusText.value,
               style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.orange[900],
-                  fontWeight: FontWeight.bold),
+                fontSize: 18,
+                color: Colors.orange[900],
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
+          // Obx(
+          //   () => Text(
+          //     _homeScreenController.isSwitched.value
+          //         ? 'Connected'
+          //         : 'Disconnected',
+          //     style: TextStyle(
+          //         fontSize: 18,
+          //         color: Colors.orange[900],
+          //         fontWeight: FontWeight.bold),
+          //   ),
+          // ),
           const SizedBox(
             height: 10,
           ),
@@ -161,8 +173,14 @@ class HomeScreen extends StatelessWidget {
           ),
           const Spacer(),
           Container(
+            decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+
+                border: Border.all(color: Colors.grey.shade200)
+            ),
             // color: Colors.amber,
             padding: const EdgeInsets.symmetric(vertical: 10.0),
+            
 
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
