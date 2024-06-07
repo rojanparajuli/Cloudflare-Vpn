@@ -51,11 +51,11 @@ class GradientTextAnimationController extends GetxController
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        title: const Text("Pause 1.1.1.1"),
+        // title: const Text("Pause 1.1.1.1"),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text("How long would you like to disable 1.1.1.1 for?"),
+            const Text("How long would you like to disable 1.1.1.1 for?",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
             const SizedBox(height: 20),
             TextButton(
               onPressed: () {
@@ -67,29 +67,27 @@ class GradientTextAnimationController extends GetxController
                   statusText.value = "Connected";
                 });
               },
-              child: const Text("Pause for 15 minutes"),
+              child: const Text("Pause for 15 minutes",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),),
             ),
             TextButton(
               onPressed: () {
                 isSwitched.value = false;
                 statusText.value = "Disconnected for 1 hour";
-                Get.back(); // Close the dialog
+                Get.back(); 
                 Future.delayed(const Duration(hours: 1), () {
                   isSwitched.value = true;
                   statusText.value = "Connected";
                 });
               },
-              child: const Text("Pause for 1 hour"),
+              child: const Text("Pause for 1 hour",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),),
             ),
             TextButton(
               onPressed: () {
-                // Implement the logic for pausing for this Wi-Fi here
                 isSwitched.value = false;
                 statusText.value = "Disconnected for this Wi-Fi";
-                Get.back(); // Close the dialog
-                // Add any additional logic if needed
+                Get.back(); 
               },
-              child: const Text("Pause for this Wi-Fi"),
+              child: const Text("Pause for this Wi-Fi",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),),
             ),
             TextButton(
               onPressed: () {
@@ -97,8 +95,9 @@ class GradientTextAnimationController extends GetxController
                 statusText.value = "Disconnected until turned back on";
                 Get.back(); // Close the dialog
               },
-              child: const Text("Until I turn it back on"),
+              child: const Text("Until I turn it back on",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),),
             ),
+         
           ],
         ),
       ),
