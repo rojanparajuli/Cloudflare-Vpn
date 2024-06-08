@@ -1,6 +1,5 @@
 import 'package:cloudflare/controller/controller.dart';
 import 'package:cloudflare/view/colors.dart';
-import 'package:cloudflare/view/support.dart';
 import 'package:cloudflare/view/wrap.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -33,7 +32,7 @@ class HomeScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {
-              Get.to(()=>Supportpage());
+              // Get.to(()=>const Supportpage());
             },
             child: const Text(
               '?',
