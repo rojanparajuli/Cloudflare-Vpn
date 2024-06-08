@@ -1,16 +1,17 @@
-# cloudflare
+# Cloudflare VPN Clone
 
-A new Flutter project.
+![Cloudflare VPN Clone](assets/ui.jpg)
 
-## Getting Started
+A simple and efficient Cloudflare VPN clone for secure and private browsing.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- **Secure Browsing**: Encrypts your internet traffic to keep your data safe.
+- **Privacy Protection**: Hides your IP address to protect your identity.
+- **Easy to Use**: User-friendly interface with simple setup.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/rojanparajuli/Cloudflare-Vpn.git
